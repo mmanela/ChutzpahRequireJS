@@ -8,7 +8,7 @@ FIXED with 3.0
 
 
 
-
+chello
 
 
 ------------------------------------------------------------------------------------------------
@@ -44,17 +44,17 @@ I had the same issue and followed the same path.
 
 In my case, I wrote the tests with typescript using AMD modules, so I had to replace 'import ...' with requires inside the tests, which I have to say it's a bit uglier.
 
-I was able to run the tests using 'import....' without issues from a QUnit web page directly, since they are run once the imports are resolved, but I didn´t have luck with Chutzpah.
+I was able to run the tests using 'import....' without issues from a QUnit web page directly, since they are run once the imports are resolved, but I didnÂ´t have luck with Chutzpah.
 
 I also needed using my require.JS config file for declared shims, so I needed additional wrapping to make it work with Chutzpah. 
 
-I don´t know the internals at all, but would it be possible to drive the test discovery/running using an already working QUnit HTML file that imports the tests or the like? I suppose that the tests are included asynchronously when using require.JS complicate things a little though.
+I donÂ´t know the internals at all, but would it be possible to drive the test discovery/running using an already working QUnit HTML file that imports the tests or the like? I suppose that the tests are included asynchronously when using require.JS complicate things a little though.
 mmanela wrote Feb 22 at 10:07 AM [x]
 
 Chutzpah already supports running a HTML harness directly. In that case Chutzpah will just run that file and not do anything fancy.
 saguiar wrote Feb 22 at 12:51 PM [x]
 
-I tried using the HTML which includes the tests that I run manually, both with chutzpah.console and from VS, but it didn´t seem to find the tests.
+I tried using the HTML which includes the tests that I run manually, both with chutzpah.console and from VS, but it didnÂ´t seem to find the tests.
 
 The HTML includes the .js which then includes the tests themselves through require.JS, using a require.JS config file for shims. I'm guessing that since the tests are not directly included in the HTML, nor accessible immediately through referenced scripts, Chutzpah might not be able to find them? Or I might be messing up ;).
 Example
